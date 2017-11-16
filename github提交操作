@@ -1,3 +1,7 @@
+注意：安装的前提条件是配置好git的相关环境或者安装好git.exe，此处不再重点提及；
+        上传的步骤：(本文采用git 命令界面进行操作)
+        （ git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"）实现登陆；
 1.将要上传的文件拷贝到这个目录下，拷贝完成后，再执行下命令git status，看git是否获取到文件的更改;cd到你的本地项目根目录下，执行git命令：git init;
 2.再执行命令：git add --all(git add .),将所有文件都添加到仓库中，如果想添加某一个文件，则将后面的--all换成你要提交的文件名即可;
 3.然后还需要将增加的文件commit到仓库里去，执行命令git commmit -m "注释语句";
