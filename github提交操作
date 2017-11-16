@@ -5,3 +5,4 @@
 5.将本地的代码关联到github上：git remote add origin https://github.com/K2Y2K/hello-word.git;
 6.上传github之前，要先pull一下，执行如下命令：git pull origin master;
 7.上传代码到github远程仓git push -u origin master;
+８．之后输入账号和密码，即可上传到github上。
