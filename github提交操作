@@ -1,0 +1,7 @@
+1.将要上传的文件拷贝到这个目录下，拷贝完成后，再执行下命令git status，看git是否获取到文件的更改;cd到你的本地项目根目录下，执行git命令：git init;
+2.再执行命令：git add --all(git add .),将所有文件都添加到仓库中，如果想添加某一个文件，则将后面的--all换成你要提交的文件名即可;
+3.然后还需要将增加的文件commit到仓库里去，执行命令git commmit -m "注释语句";
+4.在Github上创建自己的repository；
+5.将本地的代码关联到github上：git remote add origin https://github.com/K2Y2K/hello-word.git;
+6.上传github之前，要先pull一下，执行如下命令：git pull origin master;
+7.上传代码到github远程仓git push -u origin master;
