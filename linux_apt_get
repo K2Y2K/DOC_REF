@@ -1,0 +1,33 @@
+一、Ｕｂｕｎｔｕ系统下WebStorm安装
+下载地址：http://www.jetbrains.com/webstorm/download/#section=linux-version
+
+1、lee@lee-ThikingStation:~/Downloads$ sudo cp WebStorm-11.0.2.tar.gz /opt/webstorm/
+
+2、lee@lee-ThikingStation:~/Downloads$ cd /opt/webstorm
+
+3、lee@lee-ThikingStation:/opt/webstorm$ sudo tar -zxvf WebStorm-11.0.2.tar.gz
+
+4、lee@lee-ThikingStation:/opt/webstorm$ sudo mv WebStorm-143.1184.19/ ./webstorms　【修改文件名称】
+
+5、由于webstorm.sh不能识别JAVA_HOME，只能手动添加了。
+
+lee@lee-ThikingStation:/opt/webstorm/webstorms/bin$ sudo gedit webstorm.sh
+
+在第7行加入
+
+JAVA_HOME=/usr/lib/jvm/jdk1.7.0_79
+
+6.安装
+
+lee@lee-ThikingStation:/opt/webstorm/webstorms/bin$ sudo su
+
+root@lee-ThikingStation:/opt/webstorm/webstorms/bin# ./webstorm.sh
+【sudo sh webstorm.sh //启动webstorm】
+
+一步步安装就完成了。
+
+7.破解(但没有破解成功)
+
+注册时选择“License server”输入“http://idea.lanyus.com/”点击“OK”快速激活JetBrains系列产品
+
+安装完成也可在Help --> Register --> License server --> License server address --> 输入 http://idea.lanyus.com/ --> ok 激活成功！
