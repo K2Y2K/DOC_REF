@@ -31,13 +31,10 @@ shift+alt+s:抓取屏幕的一个区域　而不是整个屏幕；（自定义�
 shift+alt+s：抓取窗口，不是整个屏幕;
 print screen：全屏；
 
-三、ubuntu 安装印象笔记
+三、ubuntu 使用gedit打开文档
 
-sudo add-apt-repository ppa:nvbn-rm/ppa
-
-sudo apt-get update
-
-sudo apt-get install everpad
+sudo gedit /etc/profile  //打开设置全局环境脚本文档
+source /etc/profile　　　　//保存后同步更新文档
 
 四、ubuntu解压与压缩文件
 
@@ -133,7 +130,7 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
 
 　　-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。
   
-  五、文件的创建、拷贝和移动
+  五、文件的创建、拷贝和移动、重命名
   文件的创建：
   mkdir xxx
   文件的拷贝：
