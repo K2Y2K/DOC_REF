@@ -32,6 +32,27 @@ root@lee-ThikingStation:/opt/webstorm/webstorms/bin# ./webstorm.sh
 
 安装完成也可在Help --> Register --> License server --> License server address --> 输入 http://idea.lanyus.com/ --> ok 激活成功！
 
+８、设置webstom.sh启动的快捷方式
+在主目录下创建空白文档，将如下内容拷贝到文档中：
+[Desktop Entry]
+    Encoding=UTF-8
+    Name=WebStorm
+    GenericName=Nodejs,HTML5, JavaScript and CSS editor
+    Comment=Nodejs,HTML5, JavaScript and CSS editor
+    Exec=/opt/webstorm/webstorms/bin/webstorm.sh
+    Icon=/opt/webstorm/webstorms/bin/webstorm.svg
+    Terminal=false
+    StartupNotify=true
+    Type=Application
+    Categories=Application;Development
+    
+然后给文档命名为：webstorm.desktop 再给文件添加其他用户访问权限【运行“chmod u+x eclipse.desktop“命令即可，
+或者直接右键点击文档-》属性-》权限，勾上“允许做为程序执行文件”；】。
+双击执行该文件，该快捷方式创建成功。（可以选择锁定到启动器上）。
+
+      
+
+
 
 三、ubuntu 安装印象笔记
 
