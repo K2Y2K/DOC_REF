@@ -33,7 +33,7 @@ root@lee-ThikingStation:/opt/webstorm/webstorms/bin# ./webstorm.sh
 安装完成也可在Help --> Register --> License server --> License server address --> 输入 http://idea.lanyus.com/ --> ok 激活成功！
 
 ８、设置webstom.sh启动的快捷方式
-在主目录下创建空白文档，将如下内容拷贝到文档中：
+在主目录下创建空白文档，（或者用命令创建文档#vi /usr/share/applications/etbrains-webstorm.desktop），将如下内容拷贝到文档中：
 [Desktop Entry]
     Encoding=UTF-8
     Name=WebStorm
