@@ -81,7 +81,7 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
 
 【其他文件】
 【解压】
-
+# tar zxvf xxx.tar.gz -C /usr/xxx　　　// 解压xxx.tar.gz到/usr/xxx 路径下
 　　tar –xvf file.tar //解压 tar包
 
 　　tar -xzvf file.tar.gz //解压tar.gz
@@ -132,3 +132,11 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
 　　下面的参数-f是必须的
 
 　　-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。
+  
+  五、文件的创建、拷贝和移动
+  文件的创建：
+  mkdir xxx
+  文件的拷贝：
+  cp a.txt  ~/Downloads/b
+  文件的移动：
+  mv ~/Downloads/a   /opt/b
