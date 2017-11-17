@@ -26,11 +26,11 @@ root@lee-ThikingStation:/opt/webstorm/webstorms/bin# ./webstorm.sh
 
 一步步安装就完成了。
 
-7.破解(但没有破解成功)
+7.破解
 
-注册时选择“License server”输入“http://idea.lanyus.com/”点击“OK”快速激活JetBrains系列产品
+注册时选择“License server”输入“http://idea.imsxm.com/”点击“OK”快速激活JetBrains系列产品
 
-安装完成也可在Help --> Register --> License server --> License server address --> 输入 http://idea.lanyus.com/ --> ok 激活成功！
+安装完成也可在Help --> Register --> License server --> License server address --> 输入 http://idea.imsxm.com/ --> ok 激活成功！
 
 ８、设置webstom.sh启动的快捷方式
 在主目录下创建空白文档，（或者用命令创建文档#vi /usr/share/applications/etbrains-webstorm.desktop），将如下内容拷贝到文档中：
