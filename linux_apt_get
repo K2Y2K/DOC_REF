@@ -51,7 +51,7 @@ root@lee-ThikingStation:/opt/webstorm/webstorms/bin# ./webstorm.sh
 双击执行该文件，该快捷方式创建成功。（可以选择锁定到启动器上）。
 
       
-二、Ubuntu16.04 下如何安装搜狗拼音输入法【亲测有效】
+二、Ubuntu16.04 下如何安装搜狗拼音输入法
 
 （1）.添加fcitx键盘输入法系统【系统默认是iBus】
 
