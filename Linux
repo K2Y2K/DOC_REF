@@ -36,6 +36,9 @@ print screen：全屏；
 sudo gedit /etc/profile  //打开设置全局环境脚本文档
 source /etc/profile　　　　//保存后同步更新文档
 
+{配置在/etc/profile（所有用户有效）
+~/.bashrc（当前用户有效） }
+
 四、ubuntu解压与压缩文件
 
 【解压.zip文件】
