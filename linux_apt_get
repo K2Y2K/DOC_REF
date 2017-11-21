@@ -131,4 +131,8 @@ sudo apt-get install everpad
 
            6、注销并选择gnome登陆
 
+          {方法三 只安装gnome桌面环境（不全）：
+          $ sudo apt-get install gnome-session-flashback
+          }
 
+           安装完成之后，注销系统，进入登陆界面，点击Ubuntu icon。
