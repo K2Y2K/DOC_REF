@@ -197,4 +197,7 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
 	/etc/init.d/virtualbox
 	............
 
-
+七、卸载命令
+1.dpkg --list//浏览已安装的程序。要查看已安装的软件包列表，请输入以下命令。请注意你希望卸载的软件包的名称。
+2.sudo apt-get --purge remove <programname>//卸载程序和所有配置文件。在终端中输入以下命令，把<programname>替换成你希望完全移除的程序。
+3.sudo apt-get remove <programname> //只卸载程序。如果你移除程序但保留配置文件。
