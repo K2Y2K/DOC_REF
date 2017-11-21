@@ -143,3 +143,58 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
   mv ~/Downloads/a   /opt/b //将/a目录移动到/opt下，并重命名为b
   文件的重命名：
   mv A B   //把目录Ａ改名为Ｂ
+  
+  六、Ubuntu 16.04查看软件安装位置
+  
+	1、find命令
+ 
+	lee@lee:~$ sudo find / -name virtualbox
+	/etc/init.d/virtualbox
+	/etc/default/virtualbox
+	/usr/share/unity-scopes/virtualbox
+	/usr/share/virtualbox
+	/usr/share/lintian/overrides/virtualbox
+	/usr/share/doc/virtualbox
+	/usr/lib/virtualbox
+	/usr/bin/virtualbox
+	find: ‘/run/user/1000/gvfs’: Permission denied
+	/var/lib/dkms/virtualbox
+	/home/lee/Documents/环境搭建/2-3-环境搭建-2/虚拟机/virtualbox-4.3_4.3.22-98236~Ubuntu~precise_amd64/usr/share/virtualbox
+	/home/lee/Documents/环境搭建/2-3-环境搭建-2/虚拟机/virtualbox-4.3_4.3.22-98236~Ubuntu~precise_amd64/usr/lib/virtualbox
+	/home/lee/Documents/环境搭建/2-3-环境搭建-2/虚拟机/virtualbox-4.3_4.3.22-98236~Ubuntu~precise_amd64/usr/bin/virtualbox
+ 
+	从中判断出执行文件安装位置为："/usr/bin/virtualbox"
+ 
+	2、dpkg -l 命令(软件使用apt-get install命令安装的)
+ 
+	lee@lee:~$ dpkg -l virtualbox
+	Desired=Unknown/Install/Remove/Purge/Hold
+	| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+	|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+	||/ Name               Version        Architecture   Description
+	+++-==================-==============-==============-=========================================
+	ii  virtualbox         5.0.40-dfsg-0u amd64          x86 virtualization solution - base binari
+
+	3、whereis命令
+ 
+	lee@lee:~$ whereis virtualbox
+	virtualbox: /usr/bin/virtualbox /usr/lib/virtualbox /usr/share/virtualbox /usr/share/man/man1/virtualbox.1.gz
+ 
+	4、which命令（查看执行文件的位置）
+ 
+	lee@lee:~$ which virtualbox
+	/usr/bin/virtualbox
+ 
+	5、type命令（查看执行文件的位置）
+ 
+	lee@lee:~$ type virtualbox
+	virtualbox is /usr/bin/virtualbox
+
+	6、locate命令（查找出所有匹配文件）
+ 
+	lee@lee:~$ locate virtualbox
+	/etc/default/virtualbox
+	/etc/init.d/virtualbox
+	............
+
+
