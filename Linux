@@ -177,6 +177,12 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
         lrwxrwxrwx 1 root root 27 5月   3  2017 /usr/bin/virtualbox -> ../share/virtualbox/VBox.sh*
 	
 	lee@lee:~$ dpkg -L virtualbox(对于有些软件的可执行文件路径，没有在PATH路径下保存，通过该命令寻找安装目录)
+	{lee@lee:~$ dpkg -L  sublime-text-installer
+	 /usr/bin/subl
+	{lee@lee:~$ gedit /usr/bin/subl
+	看到重定向：exec /opt/sublime_text/sublime_text "$@"
+	可知sublime安装在了/opt/sublime_text目录下}
+	
 	
 	4、dpkg -l 命令(软件使用apt-get install命令安装的,列出软件的安装信息)
  
