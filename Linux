@@ -164,8 +164,21 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
 	/home/lee/Documents/环境搭建/2-3-环境搭建-2/虚拟机/virtualbox-4.3_4.3.22-98236~Ubuntu~precise_amd64/usr/bin/virtualbox
  
 	从中判断出执行文件安装位置为："/usr/bin/virtualbox"
+	
+	2、aptitude show XXX(可以看到XXX软件一系列信息)
+	lee@lee:~$ aptitude show sublime-text-installer
  
-	2、dpkg -l 命令(软件使用apt-get install命令安装的,列出软件的安装信息)
+	
+	3、which命令（只在PAHT变量里面寻找可执行文件的位置；执行 which virtualbox输出 /usr/bin/virtualbox 这个一般是一个软连接.通过执行:ll /usr/bin/virtualbox）
+ 
+	lee@lee:~$ which virtualbox
+	/usr/bin/virtualbox
+	lee@lee:~$ ll /usr/bin/virtualbox
+        lrwxrwxrwx 1 root root 27 5月   3  2017 /usr/bin/virtualbox -> ../share/virtualbox/VBox.sh*
+	
+	lee@lee:~$ dpkg -L virtualbox(对于有些软件的可执行文件路径，没有在PATH路径下保存，通过该命令寻找安装目录)
+	
+	4、dpkg -l 命令(软件使用apt-get install命令安装的,列出软件的安装信息)
  
 	lee@lee:~$ dpkg -l virtualbox
 	Desired=Unknown/Install/Remove/Purge/Hold
@@ -176,27 +189,17 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
 	ii  virtualbox         5.0.40-dfsg-0u amd64          x86 virtualization solution - base binari
 	
 
-	3、whereis命令
+	5、whereis命令
  
 	lee@lee:~$ whereis virtualbox
 	virtualbox: /usr/bin/virtualbox /usr/lib/virtualbox /usr/share/virtualbox /usr/share/man/man1/virtualbox.1.gz
  
-	4、which命令（只在PAHT变量里面寻找可执行文件的位置；执行 which virtualbox输出 /usr/bin/virtualbox 这个一般是一个软连接.通过执行:ll /usr/bin/virtualbox）
- 
-	lee@lee:~$ which virtualbox
-	/usr/bin/virtualbox
-	lee@lee:~$ ll /usr/bin/virtualbox
-        lrwxrwxrwx 1 root root 27 5月   3  2017 /usr/bin/virtualbox -> ../share/virtualbox/VBox.sh*
-	
-	lee@lee:~$ dpkg -L virtualbox(对于有些软件的可执行文件路径，没有在PATH路径下保存，通过该命令寻找安装目录)
-	
- 
-	5、type命令（查看执行文件的位置）
+	6、type命令（查看执行文件的位置）
  
 	lee@lee:~$ type virtualbox
 	virtualbox is /usr/bin/virtualbox
 
-	6、locate命令（查找出所有匹配文件）
+	7、locate命令（查找出所有匹配文件）
  
 	lee@lee:~$ locate virtualbox
 	/etc/default/virtualbox
