@@ -165,7 +165,7 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
  
 	从中判断出执行文件安装位置为："/usr/bin/virtualbox"
 	
-	2、aptitude show XXX(可以看到XXX软件一系列信息)
+	2、aptitude show packagename(可以看到packagename软件一系列信息)
 	lee@lee:~$ aptitude show sublime-text-installer
  
 	
