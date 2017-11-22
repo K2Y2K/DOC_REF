@@ -165,7 +165,7 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
  
 	从中判断出执行文件安装位置为："/usr/bin/virtualbox"
  
-	2、dpkg -l 命令(软件使用apt-get install命令安装的)
+	2、dpkg -l 命令(软件使用apt-get install命令安装的,列出软件的安装信息)
  
 	lee@lee:~$ dpkg -l virtualbox
 	Desired=Unknown/Install/Remove/Purge/Hold
@@ -174,16 +174,22 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
 	||/ Name               Version        Architecture   Description
 	+++-==================-==============-==============-=========================================
 	ii  virtualbox         5.0.40-dfsg-0u amd64          x86 virtualization solution - base binari
+	
 
 	3、whereis命令
  
 	lee@lee:~$ whereis virtualbox
 	virtualbox: /usr/bin/virtualbox /usr/lib/virtualbox /usr/share/virtualbox /usr/share/man/man1/virtualbox.1.gz
  
-	4、which命令（查看执行文件的位置）
+	4、which命令（只在PAHT变量里面寻找可执行文件的位置；执行 which virtualbox输出 /usr/bin/virtualbox 这个一般是一个软连接.通过执行:ll /usr/bin/virtualbox）
  
 	lee@lee:~$ which virtualbox
 	/usr/bin/virtualbox
+	lee@lee:~$ ll /usr/bin/virtualbox
+        lrwxrwxrwx 1 root root 27 5月   3  2017 /usr/bin/virtualbox -> ../share/virtualbox/VBox.sh*
+	
+	lee@lee:~$ dpkg -L virtualbox(对于有些软件的可执行文件路径，没有在PATH路径下保存，通过该命令寻找安装目录)
+	
  
 	5、type命令（查看执行文件的位置）
  
