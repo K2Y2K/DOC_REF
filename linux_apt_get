@@ -18,11 +18,13 @@ lee@lee-ThikingStation:/opt/webstorm/webstorms/bin$ sudo gedit webstorm.sh
 JAVA_HOME=/usr/lib/jvm/jdk1.7.0_79
 
 6.安装
+lee@lee-ThikingStation:/opt/webstorm/webstorms/bin$ ./webstorm.sh
 
+{
 lee@lee-ThikingStation:/opt/webstorm/webstorms/bin$ sudo su
-
 root@lee-ThikingStation:/opt/webstorm/webstorms/bin# ./webstorm.sh
 【sudo sh webstorm.sh //启动webstorm】
+}
 
 一步步安装就完成了。
 
