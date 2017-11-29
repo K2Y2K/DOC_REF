@@ -92,6 +92,10 @@ sudo dpkg -i  下载的包【以deb结尾】
 3.设置语言选项（如果找不到该设置，执行sudo apt-get install language-selector-gnome）：
 将键盘输入法系统由默认的iBus设置为fcitx，然后注销重新进入。
 进入之后在系统输入法中添加搜狗输入法即可！
+【如果安装出错，缺少依赖库，卸载,安装依赖库再安装
+sudo apt --purge remove sogoupinyin
+sudo apt install libopencc1 libopencc2 fcitx-libs fcitx-libs-qt fonts-droid-fallback libqtwebkit4 
+sudo dpkg -i sogoupinyin_2.2.0.0102_amd64.deb】
 
 
 三、ubuntu 安装印象笔记
