@@ -107,6 +107,7 @@ sudo apt-get update
 sudo apt-get install everpad
 
 
+
 四、ubuntu16.06完全安装gnome桌面及应用
 
  方法1)、直接安装
@@ -172,6 +173,8 @@ sudo apt-get install everpad
 
   sudo apt-get purge firefox firefox-branding firefox-gnome-support ubufox     //配置文件也一起删掉 
 
+
+
 六、安装nodejs
 手动安装：
 方法1）
@@ -200,6 +203,8 @@ sudo apt-get install everpad
  安装nvm命令：
  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
  】
+ 
+ 
 七、Ubuntu安装sublime text3
 （一）安装
 方法1）需要翻墙：
@@ -323,3 +328,8 @@ StartupNotify=true
 确保Sublime.desktop有可执行权限：
 sudo chmod +x Sublime.desktop
 
+
+八、安装tomcat连接mysql的jar包
+下载mysql的Java连接程序jar包，然后为tomcat导入mysql的连接jar包：
+sudo cp -r mysql-connector-java-5.1.21-bin.jar /usr/lib/tomcat/apache-tomcat-8.0.47/lib;
+（将该驱动程序复制到Tomcat服务器安装目录的/common/lib或/lib文件夹中,重启服务器。）
