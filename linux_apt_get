@@ -142,3 +142,180 @@ sudo apt-get install everpad
           }
 
            安装完成之后，注销系统，进入登陆界面，点击Ubuntu icon。
+           【安装Cairo-Dock (Fallback Mode) ，也是一种桌面环境】
+
+五、安装firefox开发者版本：
+   下载地址：
+     https://download-installer.cdn.mozilla.net/pub/devedition/releases/；
+   //如果本机安装了Firefox别的版本,查看版本安装位置，修改软连接
+   lee@lee:/opt/firefox$ firefox -v
+     Mozilla Firefox 57.0
+
+   lee@lee:/opt/firefox$ which firefox
+   /usr/bin/firefox
+
+   lee@lee:/opt/firefox$ sudo mv /usr/bin/firefox /usr/bin/firefox-old
+
+   lee@lee:/opt/firefox$ firefox-old -v
+   Mozilla Firefox 57.0
+ //把新安装的Firefox解压到/opt/目录下，再建立软连接
+  lee@lee:~$ sudo mv firefox  /opt/
+  lee@lee:~$ sudo ln -s /opt/firefox/firefox  /usr/bin/firefox
+  lee@lee:~$ firefox -v
+  Mozilla Firefox 58.0
+  lee@lee:~$
+ 
+  //卸载Ubuntu自带的Firefox：
+  dpkg --get-selections |grep firefox
+
+  sudo apt-get autoremove firefox firefox-branding firefox-gnome-support ubufox     //保留配置文件
+
+  sudo apt-get purge firefox firefox-branding firefox-gnome-support ubufox     //配置文件也一起删掉 
+
+六、安装nodejs
+手动安装：
+方法1）
+
+1、先下载nodejs,下载地址可参考：https://nodejs.org/zh-cn/download/；
+2、将node-v8.9.1-linux-x64.tar.xz 解压并重命名为node 并移动到/opt/目录下
+    tar -zxvf node-v8.9.1-linux-x64.tar.xz
+	mv node-v8.9.1-linux-x64  node
+	sudo mv node /opt/
+    查看node版本
+  	cd /opt/node/bin  
+    ls  
+    ./node -v  
+3、设置软连接：
+    sudo ln -s /opt/node/bin/node /usr/local/bin/node
+    sudo ln -s /opt/node/bin/npm /usr/local/bin/npm
+
+方法2）
+先解压，再重命名为node(mv node-v8.9.1-linux-x64 /node )，再移动到opt目录下(mv node /opt/)，
+然后vim /etc/profile（当然可以配置到个人的环境变量中），i进入编辑模式，在最后添加export NODE=/opt/node,
+然后换行添加export PATH=$PATH:$NODE/bin,esc退出编辑模式，:wq进行保存退出，(也可以换成添加export PATH=$PATH:/opt/node/bin)
+然后用source /etc/profile命令更新环境变量，echo $PATH查看输出是否已有node路径，有则环境变量生效，
+然后node -v查看node版本，假如输出版本号，则node环境配置成功。（该步骤需重启电脑才能生效）
+
+七、Ubuntu安装sublime text3
+（一）安装
+方法1）需要翻墙：
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update
+sudo apt-get install sublime-text-installer
+
+卸载 sublime text 命令：
+
+sudo apt-get remove sublime-text-installer（只卸载应用程序，并没有删除配置文件）
+sudo apt-get --purge remove sublime-text-installer
+【
+安装稳定版本
+首先下载Sublime Text 3存储库的安全密钥。这将确保从回购站下载的软件包经过身份验证等：
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+下一步。 将Sublime Text稳定库添加到您的软件源中：
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+如果你想运行Sublime Text的最新开发版本，你可以：只需运行下面这个命令，而不是上面的命令：
+echo "deb https://download.sublimetext.com/ apt/dev/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+然后更新软件库，下载：
+sudo apt-get update
+sudo apt-get install sublime-text-installer
+】
+
+方法2）手动安装：
+先去官网下载sublime text 安装包，解压并移动到opt目录下，
+sudo mv sublime_text_3 /opt/
+sudo ln -s /opt/sublime_text_3/sublime_text /usr/bin/subl　　//配置快捷键为subl（自定义）
+
+注册码：
+Sublime_text_3 for 3143 授权码/注册码
+
+    —– BEGIN LICENSE —–
+
+TwitterInc
+
+200 User License
+
+EA7E-890007
+
+1D77F72E 390CDD93 4DCBA022 FAF60790
+
+61AA12C0 A37081C5 D0316412 4584D136
+
+94D7F7D4 95BC8C1C 527DA828 560BB037
+
+D1EDDD8C AE7B379F 50C9D69D B35179EF
+
+2FE898C4 8E4277A8 555CE714 E1FB0E43
+
+D5D52613 C3D12E98 BC49967F 7652EED2
+
+9D2D2E61 67610860 6D338B72 5CF95C69
+
+E36B85CC 84991F19 7575D828 470A92AB
+
+—— END LICENSE ——
+
+sublime_text_3 for 3126的授权码/注册码:
+—– BEGIN LICENSE —–
+Michael Barnes
+Single User License
+EA7E-821385
+8A353C41 872A0D5C DF9B2950 AFF6F667
+C458EA6D 8EA3C286 98D1D650 131A97AB
+AA919AEC EF20E143 B361B1E7 4C8B7F04
+B085E65E 2F5F5360 8489D422 FB8FC1AA
+93F6323C FD7F7544 3F39C318 D95E6480
+FCCC7561 8A4A1741 68FA4223 ADCEDE07
+200C25BE DBBC4855 C4CFB774 C5EC138C
+0FEC1CEF D9DCECEC D3A5DAD1 01316C36
+—— END LICENSE ——
+{*如果是默认配置的情况下，当有新的版本出现的时候总是会有更新提示，为了取消更新提示，需进行如下操作：
+
+    菜单Sublime Text → Preferences → Settings（点击），则会打开Preferences.sublime-settings — User文件。
+
+    将下面的代码复制并粘贴到该文件的最外层中括号里。需要注意的是：取消更新提示的前提是你已经完成了Sublime Text的激活（ 
+    	
+    "update_check":false
+}
+[安装Package Control插件：https://packagecontrol.io，其他请参考：http://blog.csdn.net/stilling2006/article/details/54376743；]
+
+（二）Ubuntu下让sublime显示在右键菜单上
+
+1、Terminal里面cd到如下路径：
+~/.local/share/nautilus/scripts
+
+2、在该目录下创建一个文件，命名“sublime”（名字可以随意）。
+sudo gedit sublime
+
+文件内容如下：
+#!/bin/bash
+exec "<把这里替换成sublime的全路径>" $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
+【我自己的路径
+#!/bin/bash
+exec "/opt/sublime_text_3/sublime_text" $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS】
+【环境变量 描述
+NAUTILUS_SCRIPT_SELECTED_FILE_PATHS	所选文件的新行分割路径（仅针对本地）
+NAUTILUS_SCRIPT_SELECTED_URIS	所选文件的新行分割 URIs
+NAUTILUS_SCRIPT_CURRENT_URI	当前位置
+NAUTILUS_SCRIPT_WINDOW_GEOMETRY	当前窗口的位置和大小
+】
+3、保存文件并把文件属性设置为可执行：
+chmod u+x sublime
+
+
+（三）为sublime text创建桌面快捷方式
+在~/桌面/ 下新建一个文件，如Sublime.desktop:
+
+[Desktop Entry]
+Type=Application
+Name=Sublime Text 3
+Comment=Sublime Text 3
+Categories=Edit;Python;
+Exec= /opt/sublime_text_3/sublime_text
+Icon=/opt/sublime_text_3/Icon/48x48/sublime_text.png
+Terminal=false
+StartupNotify=true
+
+保存即可.
+确保Sublime.desktop有可执行权限：
+sudo chmod +x Sublime.desktop
+
