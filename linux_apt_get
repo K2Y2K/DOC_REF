@@ -196,6 +196,10 @@ sudo apt-get install everpad
 然后用source /etc/profile命令更新环境变量，echo $PATH查看输出是否已有node路径，有则环境变量生效，
 然后node -v查看node版本，假如输出版本号，则node环境配置成功。（该步骤需重启电脑才能生效）
 
+【安装了nvm （nvm ls ;nvm install 8.0.0 ;nvm use 8.0.0）管理note版本的工具
+ 安装nvm命令：
+ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
+ 】
 七、Ubuntu安装sublime text3
 （一）安装
 方法1）需要翻墙：
@@ -276,10 +280,10 @@ FCCC7561 8A4A1741 68FA4223 ADCEDE07
     	
     "update_check":false
 }
-[安装Package Control插件：https://packagecontrol.io，其他请参考：http://blog.csdn.net/stilling2006/article/details/54376743；]
+【安装Package Control插件：https://packagecontrol.io，其他请参考：http://blog.csdn.net/stilling2006/article/details/54376743；】
+
 
 （二）Ubuntu下让sublime显示在右键菜单上
-
 1、Terminal里面cd到如下路径：
 ~/.local/share/nautilus/scripts
 
