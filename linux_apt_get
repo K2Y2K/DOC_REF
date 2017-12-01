@@ -208,12 +208,13 @@ sudo apt-get install everpad
 七、Ubuntu安装sublime text3
 （一）安装
 方法1）需要翻墙：
-sudo add-apt-repository ppa:webupd8team/sublime-text-3
-sudo apt-get update
-sudo apt-get install sublime-text-installer
+在终端中输入：
+sudo add-apt-repository ppa:webupd8team/sublime-text-3  #添加sublime text 3的仓库
+sudo apt-get update    #更新软件库
+sudo apt-get install sublime-text-installer  #安装Sublime Text
+如果需要启动sublime，那么在terminal中输入:subl;
 
 卸载 sublime text 命令：
-
 sudo apt-get remove sublime-text-installer（只卸载应用程序，并没有删除配置文件）
 sudo apt-get --purge remove sublime-text-installer
 【
