@@ -1,4 +1,7 @@
-一、关机命令：
+# Linux_man
+
+## 一、关机命令
+
 [root@www ~]# shutdown -h now
 
 立刻关机，其中 now 相当于时间为 0 的状态
@@ -23,15 +26,16 @@
 
 仅发出警告信件的参数！系统并不会关机啦！吓唬人！
 
+## 二、Linux　系统下的截图快捷键
 
-二、Linux　系统下的截图快捷键(system setting －>  keyboard －>screenshots）
+(system setting －>  keyboard －>screenshots）
 
 也可以在终端中输入"gnome-screenshot -h"回车，可以看到截图命令；
 shift+alt+s:抓取屏幕的一个区域　而不是整个屏幕；（自定义时命令输入：gnome-screenshot　-a）;
 shift+alt+s：抓取窗口，不是整个屏幕;
 print screen：全屏；
 
-三、ubuntu 使用gedit打开文档
+## 三、ubuntu 使用gedit打开文档
 
 sudo gedit /etc/profile  //打开设置全局环境脚本文档
 source /etc/profile　　　　//保存后同步更新文档
@@ -39,7 +43,7 @@ source /etc/profile　　　　//保存后同步更新文档
 {配置在/etc/profile（所有用户有效）
 ~/.bashrc（当前用户有效） }
 
-四、ubuntu解压与压缩文件
+## 四、ubuntu解压与压缩文件
 
 【解压.zip文件】
 
@@ -60,15 +64,15 @@ sudo apt-get install unzip
 
 【解压.rar文件】 
 
-#安装unrar软件#
+安装unrar软件
 
 sudo apt-get install unrar
 
-#卸载unrar软件#
+卸载unrar软件
 
 sudo apt-get remove unrar
 
-#解压.rar文件#
+解压.rar文件
 
 unrar x ./FileName.rar 
 【
@@ -81,7 +85,9 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
 
 【其他文件】
 【解压】
-# tar zxvf xxx.tar.gz -C /usr/xxx　　　// 解压xxx.tar.gz到/usr/xxx 路径下
+
+​        tar zxvf xxx.tar.gz -C /usr/xxx　　　// 解压xxx.tar.gz到/usr/xxx 路径下
+
 　　tar –xvf file.tar //解压 tar包
 
 　　tar -xzvf file.tar.gz //解压tar.gz
@@ -132,8 +138,9 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
 　　下面的参数-f是必须的
 
 　　-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。
-  
-  五、文件的创建、拷贝和移动、重命名
+
+##   五、文件的创建、拷贝和移动、重命名
+
   文件的创建：
   mkdir xxx
   文件的拷贝：
@@ -143,11 +150,11 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
   mv ~/Downloads/a   /opt/b //将/a目录移动到/opt下，并重命名为b
   文件的重命名：
   mv A B   //把目录Ａ改名为Ｂ
-  
-  六、Ubuntu 16.04查看软件安装位置
-  
+
+##   六、Ubuntu 16.04查看软件安装位置
+
 	1、find命令
- 
+
 	lee@lee:~$ sudo find / -name virtualbox
 	/etc/init.d/virtualbox
 	/etc/default/virtualbox
@@ -162,19 +169,19 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
 	/home/lee/Documents/环境搭建/2-3-环境搭建-2/虚拟机/virtualbox-4.3_4.3.22-98236~Ubuntu~precise_amd64/usr/share/virtualbox
 	/home/lee/Documents/环境搭建/2-3-环境搭建-2/虚拟机/virtualbox-4.3_4.3.22-98236~Ubuntu~precise_amd64/usr/lib/virtualbox
 	/home/lee/Documents/环境搭建/2-3-环境搭建-2/虚拟机/virtualbox-4.3_4.3.22-98236~Ubuntu~precise_amd64/usr/bin/virtualbox
- 
+	 
 	从中判断出执行文件安装位置为："/usr/bin/virtualbox"
 	
 	2、aptitude show packagename(可以看到packagename软件一系列信息)
 	lee@lee:~$ aptitude show sublime-text-installer
- 
-	
+
+
 	3、which命令（只在PAHT变量里面寻找可执行文件的位置；执行 which virtualbox输出 /usr/bin/virtualbox 这个一般是一个软连接.通过执行:ll /usr/bin/virtualbox）
- 
+
 	lee@lee:~$ which virtualbox
 	/usr/bin/virtualbox
 	lee@lee:~$ ll /usr/bin/virtualbox
-        lrwxrwxrwx 1 root root 27 5月   3  2017 /usr/bin/virtualbox -> ../share/virtualbox/VBox.sh*
+	    lrwxrwxrwx 1 root root 27 5月   3  2017 /usr/bin/virtualbox -> ../share/virtualbox/VBox.sh*
 	
 	lee@lee:~$ dpkg -L virtualbox(对于有些软件的可执行文件路径，没有在PATH路径下保存，通过该命令寻找安装目录)
 	{lee@lee:~$ dpkg -L  sublime-text-installer
@@ -182,10 +189,10 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
 	{lee@lee:~$ gedit /usr/bin/subl
 	看到重定向：exec /opt/sublime_text/sublime_text "$@"
 	可知sublime安装在了/opt/sublime_text目录下}
-	
-	
+
+
 	4、dpkg -l 命令(软件使用apt-get install命令安装的,列出软件的安装信息)
- 
+
 	lee@lee:~$ dpkg -l virtualbox
 	Desired=Unknown/Install/Remove/Purge/Hold
 	| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
@@ -193,26 +200,27 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
 	||/ Name               Version        Architecture   Description
 	+++-==================-==============-==============-=========================================
 	ii  virtualbox         5.0.40-dfsg-0u amd64          x86 virtualization solution - base binari
-	
+
 
 	5、whereis命令
- 
+
 	lee@lee:~$ whereis virtualbox
 	virtualbox: /usr/bin/virtualbox /usr/lib/virtualbox /usr/share/virtualbox /usr/share/man/man1/virtualbox.1.gz
- 
+	 
 	6、type命令（查看执行文件的位置）
- 
+	 
 	lee@lee:~$ type virtualbox
 	virtualbox is /usr/bin/virtualbox
-
+	
 	7、locate命令（查找出所有匹配文件）
- 
+	 
 	lee@lee:~$ locate virtualbox
 	/etc/default/virtualbox
 	/etc/init.d/virtualbox
 	............
 
-七、卸载命令
+## 七、卸载命令
+
 1.dpkg --list//浏览已安装的程序。要查看已安装的软件包列表，请输入以下命令。请注意你希望卸载的软件包的名称。
 2.sudo apt-get --purge remove <programname>//卸载程序和所有配置文件。在终端中输入以下命令，把<programname>替换成你希望完全移除的程序。
 3.sudo apt-get remove <programname> //只卸载程序。如果你移除程序但保留配置文件。

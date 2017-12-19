@@ -1,4 +1,7 @@
-一、Ｕｂｕｎｔｕ系统下WebStorm安装
+# Unbuntu系统apt-get安装
+
+## 一、Ubuntu系统下WebStorm安装
+
 下载地址：http://www.jetbrains.com/webstorm/download/#section=linux-version
 
 1、lee@lee-ThikingStation:~/Downloads$ sudo cp WebStorm-11.0.2.tar.gz /opt/webstorm/
@@ -47,13 +50,12 @@ root@lee-ThikingStation:/opt/webstorm/webstorms/bin# ./webstorm.sh
     StartupNotify=true
     Type=Application
     Categories=Application;Development
-    
+
 然后给文档命名为：webstorm.desktop 再给文件添加其他用户访问权限【运行“chmod u+x eclipse.desktop“命令即可，
 或者直接右键点击文档-》属性-》权限，勾上“允许做为程序执行文件”；】。
 双击执行该文件，该快捷方式创建成功。（可以选择锁定到启动器上）。
 
-      
-二、Ubuntu16.04 下如何安装搜狗拼音输入法
+## 二、Ubuntu16.04 下如何安装搜狗拼音输入法
 
 （1）.添加fcitx键盘输入法系统【系统默认是iBus】
 
@@ -97,18 +99,20 @@ sudo apt --purge remove sogoupinyin
 sudo apt install libopencc1 libopencc2 fcitx-libs fcitx-libs-qt fonts-droid-fallback libqtwebkit4 
 sudo dpkg -i sogoupinyin_2.2.0.0102_amd64.deb】
 
+## 三、ubuntu 安装印象笔记
 
-三、ubuntu 安装印象笔记
-
+```
 sudo add-apt-repository ppa:nvbn-rm/ppa
 
 sudo apt-get update
 
 sudo apt-get install everpad
 
+```
 
 
-四、ubuntu16.06完全安装gnome桌面及应用
+
+## 四、ubuntu16.06完全安装gnome桌面及应用
 
  方法1)、直接安装
 
@@ -141,12 +145,14 @@ sudo apt-get install everpad
           {方法三 只安装gnome桌面环境（不全）：
           $ sudo apt-get install gnome-session-flashback
           }
-
+    
            安装完成之后，注销系统，进入登陆界面，点击Ubuntu icon。
            【安装Cairo-Dock (Fallback Mode) ，也是一种桌面环境】
 
-五、安装firefox开发者版本：
+## 五、安装firefox开发者版本
+
    下载地址：
+
      https://download-installer.cdn.mozilla.net/pub/devedition/releases/；
    //如果本机安装了Firefox别的版本,查看版本安装位置，修改软连接
    lee@lee:/opt/firefox$ firefox -v
@@ -165,7 +171,7 @@ sudo apt-get install everpad
   lee@lee:~$ firefox -v
   Mozilla Firefox 58.0
   lee@lee:~$
- 
+
   //卸载Ubuntu自带的Firefox：
   dpkg --get-selections |grep firefox
 
@@ -175,15 +181,16 @@ sudo apt-get install everpad
 
 
 
-六、安装nodejs
+## 六、安装nodejs
+
 手动安装：
 方法1）
 
 1、先下载nodejs,下载地址可参考：https://nodejs.org/zh-cn/download/；
 2、将node-v8.9.1-linux-x64.tar.xz 解压并重命名为node 并移动到/opt/目录下
     tar -zxvf node-v8.9.1-linux-x64.tar.xz
-	mv node-v8.9.1-linux-x64  node
-	sudo mv node /opt/
+    mv node-v8.9.1-linux-x64  node
+    sudo mv node /opt/
     查看node版本
   	cd /opt/node/bin  
     ls  
@@ -203,9 +210,9 @@ sudo apt-get install everpad
  安装nvm命令：
  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
  】
- 
- 
-七、Ubuntu安装sublime text3
+
+## 七、Ubuntu安装sublime text3
+
 （一）安装
 方法1）需要翻墙：
 在终端中输入：
@@ -239,32 +246,22 @@ sudo ln -s /opt/sublime_text_3/sublime_text /usr/bin/subl　　//配置快捷键
 Sublime_text_3 for 3143 授权码/注册码
 
     —– BEGIN LICENSE —–
-
-TwitterInc
-
-200 User License
-
-EA7E-890007
-
-1D77F72E 390CDD93 4DCBA022 FAF60790
-
-61AA12C0 A37081C5 D0316412 4584D136
-
-94D7F7D4 95BC8C1C 527DA828 560BB037
-
-D1EDDD8C AE7B379F 50C9D69D B35179EF
-
-2FE898C4 8E4277A8 555CE714 E1FB0E43
-
-D5D52613 C3D12E98 BC49967F 7652EED2
-
-9D2D2E61 67610860 6D338B72 5CF95C69
-
-E36B85CC 84991F19 7575D828 470A92AB
-
-—— END LICENSE ——
-
+    TwitterInc
+    200 User License
+    EA7E-890007
+    1D77F72E 390CDD93 4DCBA022 FAF60790
+    61AA12C0 A37081C5 D0316412 4584D136
+    94D7F7D4 95BC8C1C 527DA828 560BB037
+    D1EDDD8C AE7B379F 50C9D69D B35179EF
+    2FE898C4 8E4277A8 555CE714 E1FB0E43
+    D5D52613 C3D12E98 BC49967F 7652EED2
+    9D2D2E61 67610860 6D338B72 5CF95C69
+    E36B85CC 84991F19 7575D828 470A92AB
+    —— END LICENSE ——
+    
 sublime_text_3 for 3126的授权码/注册码:
+
+```
 —– BEGIN LICENSE —–
 Michael Barnes
 Single User License
@@ -278,12 +275,15 @@ FCCC7561 8A4A1741 68FA4223 ADCEDE07
 200C25BE DBBC4855 C4CFB774 C5EC138C
 0FEC1CEF D9DCECEC D3A5DAD1 01316C36
 —— END LICENSE ——
+```
+
+
 {*如果是默认配置的情况下，当有新的版本出现的时候总是会有更新提示，为了取消更新提示，需进行如下操作：
 
     菜单Sublime Text → Preferences → Settings（点击），则会打开Preferences.sublime-settings — User文件。
 
     将下面的代码复制并粘贴到该文件的最外层中括号里。需要注意的是：取消更新提示的前提是你已经完成了Sublime Text的激活（ 
-    	
+
     "update_check":false
 }
 【安装Package Control插件：https://packagecontrol.io，其他请参考：http://blog.csdn.net/stilling2006/article/details/54376743；】
@@ -297,10 +297,14 @@ FCCC7561 8A4A1741 68FA4223 ADCEDE07
 sudo gedit sublime
 
 文件内容如下：
-#!/bin/bash
+
+!/bin/bash
+
 exec "<把这里替换成sublime的全路径>" $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
 【我自己的路径
-#!/bin/bash
+
+!/bin/bash
+
 exec "/opt/sublime_text_3/sublime_text" $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS】
 【环境变量 描述
 NAUTILUS_SCRIPT_SELECTED_FILE_PATHS	所选文件的新行分割路径（仅针对本地）
@@ -315,6 +319,7 @@ chmod u+x sublime
 （三）为sublime text创建桌面快捷方式
 在~/桌面/ 下新建一个文件，如Sublime.desktop:
 
+```
 [Desktop Entry]
 Type=Application
 Name=Sublime Text 3
@@ -324,13 +329,14 @@ Exec= /opt/sublime_text_3/sublime_text
 Icon=/opt/sublime_text_3/Icon/48x48/sublime_text.png
 Terminal=false
 StartupNotify=true
+```
 
 保存即可.
 确保Sublime.desktop有可执行权限：
 sudo chmod +x Sublime.desktop
 
+## 八、安装tomcat连接mysql的jar包
 
-八、安装tomcat连接mysql的jar包
 下载mysql的Java连接程序jar包，然后为tomcat导入mysql的连接jar包：
 sudo cp -r mysql-connector-java-5.1.21-bin.jar /usr/lib/tomcat/apache-tomcat-8.0.47/lib;
 （将该驱动程序复制到Tomcat服务器安装目录的/common/lib或/lib文件夹中,重启服务器。）
