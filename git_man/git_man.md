@@ -1,8 +1,14 @@
+# git_man
+
+## 1、将本地项目上传到github
+
 注意：安装的前提条件是配置好git的相关环境或者安装好git.exe，此处不再重点提及；
+
         上传的步骤：(本文采用git 命令界面进行操作)
         （ git config --global user.email "you@example.com"
         git config --global user.name "Your Name"）实现登陆；
-上传项目：
+### 上传项目：
+
 1.将要上传的文件拷贝到这个目录下，拷贝完成后，再执行下命令git status，看git是否获取到文件的更改;cd到你的本地项目根目录下，执行git命令：git init;
 2.再执行命令：git add --all(git add .),将所有文件都添加到仓库中，如果想添加某一个文件，则将后面的--all换成你要提交的文件名即可;
 3.然后还需要将增加的文件commit到仓库里去，执行命令git commmit -m "注释语句";
@@ -13,23 +19,31 @@
 7.上传代码到github远程仓git push -u origin master;
 ８．之后输入账号和密码，即可上传到github上。
 
-代码修改：
+### 代码修改：
+
 添加目录或文件：
 $ git add /XXX/XX.XX
 【$ git add .       
-#将文件添加到暂缓区，每次修改之后都需要将文件放到暂缓区去
-# . 代表当前目录下所有已增加或者已修改的文件
-# git add /XXX/XXX/XXX.xx  针对某个特定文件
+
+将文件添加到暂缓区，每次修改之后都需要将文件放到暂缓区去
+
+. 代表当前目录下所有已增加或者已修改的文件
+
+git add /XXX/XXX/XXX.xx  针对某个特定文件
 
 $ git commit -m “xxx log” 
-#将文件提交到本地的仓库中
+
+将文件提交到本地的仓库中
+
 】
 
 $ git commit –m “xxx log”
 
 $ git push origin xxxx
 【将本地的操作同步到服务器中
-#XXX代表需要提交的分支，可用git branch –a查看所有分支】
+
+XXX代表需要提交的分支，可用git branch –a查看所有分支】
+
 删除目录或文件：
 $ git rm /XXX/XX.XX
 
@@ -47,11 +61,17 @@ $ git push origin xxxx
 从github上更新代码:
 
 $ git pull
-#本地的仓库(.git隐藏文件夹)更新到与远程仓库一样，并同时更新工作目录(alps)
+
+本地的仓库(.git隐藏文件夹)更新到与远程仓库一样，并同时更新工作目录(alps)
+
 $ git fetch [remote-name]
-#本地的仓库(.git隐藏文件夹)更新到与远程仓库一样，但是不会同步到工作目录(alps)
+
+本地的仓库(.git隐藏文件夹)更新到与远程仓库一样，但是不会同步到工作目录(alps)
+
 $ git merge origin/xxx
-#同步到工作目录(alps)
+
+同步到工作目录(alps)
+
 【
 pull与fetch的区别：
 git fetch：相当于是从远程获取最新版本到本地，不会自动merge 
@@ -60,42 +80,63 @@ git pull：相当于是从远程获取最新版本并merge到本地，相当于g
 】
 从本地仓库恢复代码：
 $ git checkout /xxx/xxx
-#从本地仓库恢复指定文件或目录至工程中。也可以用git checkout .来更新所有当前目录下的文件
+
+从本地仓库恢复指定文件或目录至工程中。也可以用git checkout .来更新所有当前目录下的文件
 
 更新单个文件到最新：
 $ git fetch
 $ git checkout origin/xxx -- path/to/file
-#从远程服务器更新到本地仓库，在工作目录下只更新单个file文件到最新
+
+从远程服务器更新到本地仓库，在工作目录下只更新单个file文件到最新
 
 更新单个文件到commit_id：
 $ git fetch
 $ git checkout commit_id path/to/file
-#从远程服务器更新到本地仓库，在工作目录下只更新单个file文件到commit_id
+
+从远程服务器更新到本地仓库，在工作目录下只更新单个file文件到commit_id
 
 恢复错误提交：
 $ git reset –soft ID
-#相当于将上几次commit进行回退至暂存区，工作目录不会变动
+
+相当于将上几次commit进行回退至暂存区，工作目录不会变动
+
 $ git reset –hard ID
-#相当于将上几次commit  add(rm mv ..) 以及工作目录的改动都回退
+
+相当于将上几次commit  add(rm mv ..) 以及工作目录的改动都回退
 
 $ git diff --cached
-#可以查看当前工作环境所修改的地方(工作环境相对于本地仓库的修改，即通过git add已经将修改添加进“暂存区域”，但并没有运行git commit提交到本地仓库的修改部分)
+
+可以查看当前工作环境所修改的地方(工作环境相对于本地仓库的修改，即通过git add已经将修改添加进“暂存区域”，但并没有运行git commit提交到本地仓库的修改部分)
+
 $ git status
-#可以用来查看当前的工程文件状态 
+
+可以用来查看当前的工程文件状态
+
 git diff 和git status的区别是git diff 会列出文件具体修改的地方，git status是列出文件的修改状态。
 
-查看log:
+### 查看log:
+
 $ git log
-#可以查看简单的提交log
+
+可以查看简单的提交log
+
 $ git log -u
-#查看详细的提交log
+
+查看详细的提交log
+
 $ git log –author=xxxname
-#查看某个人的提交log
+
+查看某个人的提交log
+
 $ git log \xxx
-#查看某个目录或文件相关的修改log
+
+查看某个目录或文件相关的修改log
+
 在查看log等git操作后，想要退出git查看界面，先按“Esc”，再按“F2”；
 $ git show COMMIT_ID
-#可以查看某一次提交
+
+可以查看某一次提交
+
 $ git log --stat 
 查看提交历史，并显示统计信息
 
@@ -122,4 +163,19 @@ $ git log --until="2008-09-14"
 --committer 仅显示指定提交者相关的提交。
 查看某个时刻之后的提交历史： ; 
 
+### 创建新分支：
+
+```
+git branch -a   //查看当前项目的所有分支
+git branch -l dev  //创建新分支dev
+git checkout dev  //切换到dev分支
+git branch -d dev //删除dev分支（）
+git branch -D dev //强制删除dev分支
+以上操作只是本地仓库操作，需要push到github上，才能同步。
+git branch -l dev-only
+git push origin dev-only  //创建新分支dev-only 并push到github上
+
+git merge --no-ff master //假设当前分支为dev,将master 里的p1 合入dev分支。
+git push origin :dev-only  //删除远程分支
+```
 
