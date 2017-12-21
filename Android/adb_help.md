@@ -49,3 +49,18 @@ adb shell /system/bin/screencap -p /sdcard/screenshot.png（保存到SDCard）
 adb pull /sdcard/screenshot.png d:/screenshot.png（保存到电脑）
 ```
 
+### 3、Android系统信息获取
+
+```
+//系统配置信息
+android.os.Build
+STARNAUTE4:/ $ getprop ro.build.id
+           NRD90M
+STARNAUTE4:/system $ cat build.prop
+//软硬件信息
+SystemProperty
+STARNAUTE4:/proc $ cat cpuinfo
+
+
+```
+
