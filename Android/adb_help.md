@@ -64,3 +64,13 @@ STARNAUTE4:/proc $ cat cpuinfo
 
 ```
 
+### 4、AM命令
+
+```
+lidongxue@lidongxue:~$ adb shell am start -n com.example.lidongxue.myapplication/com.example.lidongxue.myapplication.MainActivity
+Starting: Intent { cmp=com.example.lidongxue.myapplication/.MainActivity }
+lidongxue@lidongxue:~$ adb shell am start -N com.example.lidongxue.myapplication/com.example.lidongxue.myapplication.MainActivity
+Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.example.lidongxue.myapplication/.MainActivity }
+
+```
+

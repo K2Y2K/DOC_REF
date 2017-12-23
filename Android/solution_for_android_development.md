@@ -88,3 +88,17 @@ unexpected error while parsing input: invalid ui automator hierarchy file
 C:\Users\Administrator\\.android中删除monitor-workspace文件，重新打开monitor就行。
 
 即`rm -rf $HOME/.android/monitor-workspace` or remove the directory manually。
+
+### 5、
+
+**Problem :**
+
+Caused by: java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocation$AndroidLocationException : Unsupported major.minor version 52.0
+
+**Description:**
+
+打开AMD，报错。看报错信息，是因为使用的jar包版本不对。JDK不同的版本，编译出的class文件是不同的。
+
+**Solution:**
+
+修改了jdk版本为openjdk version "1.8.0_151"
