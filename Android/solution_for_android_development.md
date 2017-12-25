@@ -102,3 +102,32 @@ Caused by: java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLoca
 **Solution:**
 
 修改了jdk版本为openjdk version "1.8.0_151"
+
+6、
+
+**Problem :**
+
+root@sr72_w_lca:/system/app # mv /data/local/tmp/app-debug.apk /system/app/    
+failed on '/data/local/tmp/app-debug.apk' - Cross-device link
+
+**Description:**
+
+**Solution:**
+
+```
+   2. $ adb shell  
+   3. $ su // 切换到 root 用户。如果没有获得 Root 权限，这一步不会成功。  
+   4. # mount -o remount,rw -t ubifs /dev/ubi0_0 /system // 让分区可写。  
+   //ubifs /dev/ubi0_0 /system  这个通过mount 查看system 在哪个分区下
+   5. # cat /sdcard/app-debug.apk > /system/app/app-debug.apk // 这一步可以用 cp 实现，但一般设备中没有包含该命令。如果使用 mv 会出现错误：failed on '/sdcard/NetWork.apk' - Cross-device link。   
+   6. # mount -o remount,ro -t ubifs /dev/ubi0_0 /system // 还原分区属性，只读。  
+   7. # exit  
+   8. $ exit  
+   
+   or
+   adb remount
+   
+   or 
+   adb shell su之后将文件系统remount为读写权限： mount -o rw,remount /system。出于安全考虑，记得完事后remount回只读： mount -o ro,remount /system
+```
+
