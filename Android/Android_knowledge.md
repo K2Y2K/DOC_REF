@@ -251,6 +251,19 @@ dex2jar classes.dex -> ./classes-dex2jar.jar
 lee@lee:~/seeapp$ 
 ```
 
+如果遇到
+
+```
+d2j-dex2jar.sh: 36: d2j-dex2jar.sh: ./d2j_invoke.sh: Permission denied
+solution：
+sudo chmod +x d2j-dex2jar.sh
+sudo chmod +x d2j_invoke.sh
+```
+
+以下问题：
+
+
+
 然后我们会得到一个classes-dex2jar.jar文件，我们借助JD-GUI工具打开即可。
 
 **反编译资源：**

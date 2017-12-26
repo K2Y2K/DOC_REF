@@ -103,7 +103,7 @@ Caused by: java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLoca
 
 修改了jdk版本为openjdk version "1.8.0_151"
 
-6、
+### 6、
 
 **Problem :**
 
