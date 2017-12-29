@@ -57,6 +57,7 @@ android.os.Build
 STARNAUTE4:/ $ getprop ro.build.id
            NRD90M
 STARNAUTE4:/system $ cat build.prop
+STARNAUTE4:/ $ getprop ro.build.type
 //软硬件信息
 SystemProperty
 STARNAUTE4:/proc $ cat cpuinfo
@@ -71,6 +72,10 @@ lee@lee:~$ adb shell am start -n com.example.lee.myapplication/com.example.lee.m
 Starting: Intent { cmp=com.example.lee.myapplication/.MainActivity }
 lee@lee:~$ adb shell am start -N com.example.lee.myapplication/com.example.lee.myapplication.MainActivity
 Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.example.lee.myapplication/.MainActivity }
+
+
+$ adb install-multiple -r -t -p com.example.lidongxue.myapplication /home/lidongxue/AndroidStudioProjects/MyApplication5/app/build/outputs/apk/debug/app-debug.apk 
+$ adb shell am start -n "com.example.lee.myapplication/com.example.lee.myapplication.MainActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
 
 ```
 
