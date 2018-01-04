@@ -157,6 +157,11 @@ lee@lee:~/Documents/apksigned$ jarsigner -verbose -keystore /XXX/lee.jks -signed
 
 输入上面命令后按回车健，将会以交互的方式让用户输入数字证书keystore的密码
 
+```
+//查看apk签名是否成功
+jarsigner -verify -verbose -certs hi.apk > log.txt
+```
+
 4.使用zipalign.exe工具优化APK安装包。zipalign.exe是Android自带的一个档案整理工具，它可用于优化APK安装包，从而提升Android应用与系统之间的交互效率，提升应用程序的运行速度。
 
 在命令行窗口输入如下命令
