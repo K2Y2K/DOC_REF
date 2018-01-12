@@ -679,6 +679,8 @@ grep "main()" . -r --exclude "README"
 #在搜索结果中排除filelist文件列表里的文件
 grep "main()" . -r --exclude-from filelist
 
+grep -R --exclude-dir=node_modules 'some pattern' /path/to/search
+
 # .表示当前目录:
 grep "wifi" . -r -n
 or
@@ -732,6 +734,10 @@ echo gun is not unix | grep -b -o "not"
 #搜索多个文件并查找匹配文本在哪些文件中：
 grep -l "text" file1 file2 file3...
 
+
+
+#--line-buffered 打开buffering 模式，针对搜索动态文件（不断地添加信息到文件的尾部）：
+[root@localhost ~]#tail -f file | grep --line-buffered your_pattern 
 
 
 ```
@@ -916,5 +922,43 @@ fi
 文件不是个目录
 文件不为空
 文件存在
+```
+
+###### **特殊运算符：**
+
+| 参数处理 | 说明                                       |
+| ---- | ---------------------------------------- |
+| $#   | 传递到脚本的参数个数                               |
+| $*   | 以一个单字符串显示所有向脚本传递的参数。如"$*"用「"」括起来的情况、以"$1 $2 … $n"的形式输出所有参数。 |
+| $$   | 脚本运行的当前进程ID号                             |
+| $!   | 后台运行的最后一个进程的ID号                          |
+| $@   | 与$*相同，但是使用时加引号，并在引号中返回每个参数。如"$@"用「"」括起来的情况、以"$1" "$2" … "$n" 的形式输出所有参数。 |
+| $-   | 显示Shell使用的当前选项，与[set命令](https://www.w3cschool.cn/linux/linux-comm-set.html)功能相同。 |
+| $?   | 显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。          |
+
+```
+注意：$10 不能获取第十个参数，获取第十个参数需要${10}。当n>=10时，需要使用${n}来获取参数。
+
+shell 函数：
+1、可以带function fun() 定义，也可以直接fun() 定义,不带任何参数。
+2、参数返回，可以显示加：return 返回，如果不加，将以最后一条命令运行结果，作为返回值。 return后跟数值n(0-255）。
+
+```
+
+###### shell输入输出重定向：
+
+| 命令              | 说明                             |
+| --------------- | ------------------------------ |
+| command > file  | 将输出重定向到 file。                  |
+| command < file  | 将输入重定向到 file。                  |
+| command >> file | 将输出以追加的方式重定向到 file。            |
+| n > file        | 将文件描述符为 n 的文件重定向到 file。        |
+| n >> file       | 将文件描述符为 n 的文件以追加的方式重定向到 file。  |
+| n >& m          | 将输出文件 m 和 n 合并。                |
+| n <& m          | 将输入文件 m 和 n 合并。                |
+| << tag          | 将开始标记 tag 和结束标记 tag 之间的内容作为输入。 |
+
+```
+需要注意的是文件描述符 0 通常是标准输入（STDIN），1 是标准输出（STDOUT），2 是标准错误输出（STDERR）。
 ```
 
