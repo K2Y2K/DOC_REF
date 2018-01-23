@@ -960,5 +960,75 @@ shell 函数：
 
 ```
 需要注意的是文件描述符 0 通常是标准输入（STDIN），1 是标准输出（STDOUT），2 是标准错误输出（STDERR）。
+2>&1 表示将标准错误重定向到标准输出 。
+标准输入文件(stdin)：stdin的文件描述符为0，Unix程序默认从stdin读取数据。
+标准输出文件(stdout)：stdout 的文件描述符为1，Unix程序默认向stdout输出数据。
+标准错误文件(stderr)：stderr的文件描述符为2，Unix程序会向stderr流中写入错误信息。
+command 2 > file  //将stderr 重定向到file.
+command 2 >> file  //将stderr追加到file文件末尾.
+command >file 2>&1  or command >> file 2>&1//将 stdout 和 stderr 合并后重定向到 file.
+command < file1 >file2  //对 stdin 和 stdout 都重定向,将 stdin 重定向到 file1，将 stdout 重定向到 file2.
+
+Here Document 是 Shell 中的一种特殊的重定向方式，用来将输入重定向到一个交互式 Shell 脚本或程序。
+
+command > /dev/null //如果希望执行某个命令，但又不希望在屏幕上显示输出结果，那么可以将输出重定向到 /dev/null.
+(/dev/null 是一个特殊的文件，写入到它的内容都会被丢弃；如果尝试从该文件读取内容，那么什么也读不到。但是 /dev/null 文件非常有用，将命令的输出重定向到它，会起到"禁止输出"的效果。)
+
+command > /dev/null 2>&1  //屏蔽 stdout 和 stderr
+```
+
+wc命令
+
+```
+wc命令用来计算数字。利用wc指令我们可以计算文件的Byte数、字数或是列数，若不指定文件名称，或是所给予的文件名为“-”，则wc指令会从标准输入设备读取数据。
+wc(选项)(参数)
+（选项）-c或--bytes或——chars：只显示Bytes数；
+-l或——lines：只显示列数；
+-w或——words：只显示字数。
+（参数）文件：需要统计的文件列表。
+lee@lee:~/Downloads$ wc -l use
+23 use
+lee@lee:~/Downloads$ wc -l <use
+23
+第一个例子，会输出文件名；第二个不会，因为它仅仅知道从标准输入读取内容。
+
+command1 < infile > outfile
+同时替换输入和输出，执行command1，从文件infile读取内容，然后将输出写入到outfile中。
+```
+
+
+
+##  tee command
+
+```
+功能说明：读取标准输入的数据，并将其内容输出成文件。
+语　　法：tee [-ai][--help][--version][文件...]
+补充说明：tee指令会从标准输入设备读取数据，将其内容输出到标准输出设备，同时保存成文件。
+参　　数：
+　-a或--append 　附加到既有文件的后面，而非覆盖它．
+　-i-i或--ignore-interrupts 　忽略中断信号。
+　--help 　在线帮助。
+　--version 　显示版本信息。
+```
+
+Example:
+
+```
+
+lee@lee:~/Downloads$ who |tee who.out
+lee tty7         2018-01-13 17:18 (:0)
+lee@lee:~/Downloads$ cat who.out
+lee tty7         2018-01-13 17:18 (:0)
+lee@lee:~/Downloads$ pwd |tee -a who.out
+/home/lee/Downloads
+lee@lee:~/Downloads$ cat who.out
+lidongxue tty7         2018-01-13 17:18 (:0)
+/home/lidongxue/Downloads
+lee@lee:~/Downloads$ 
+lee@lee:~/Downloads$ la |tee out.txt |cat -n
+lee@lee:~/Downloads$ ls | tee -    //输出到标准输出两次,同时保存到-中。
+lee@lee:~/Downloads$ ls | tee file -   //输出到标准输出两次，同时保存到file1和-中。
+lee@lee:~/Downloads$ ls | tee file1 file2 -  //输出到标准输出两次，同时保存到file1和file2和-中。
+lee@lee:~/Downloads$ rm - file
 ```
 
