@@ -341,5 +341,7 @@ sudo chmod +x Sublime.desktop
 sudo cp -r mysql-connector-java-5.1.21-bin.jar /usr/lib/tomcat/apache-tomcat-8.0.47/lib;
 （将该驱动程序复制到Tomcat服务器安装目录的/common/lib或/lib文件夹中,重启服务器。）
 
-### 
+## 九、右键菜单栏中出现终端
+
+sudo apt-get install nautilus-open-terminal
 
