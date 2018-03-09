@@ -345,3 +345,95 @@ sudo cp -r mysql-connector-java-5.1.21-bin.jar /usr/lib/tomcat/apache-tomcat-8.0
 
 sudo apt-get install nautilus-open-terminal
 
+
+
+## 十、安装wireshark
+
+**安装：**
+
+```
+sudo apt-add-repository ppa:wireshark-dev/stable
+sudo apt-get update
+sudo apt-get install wireshark
+```
+
+安装过程中需要设置，选择“是”，若没出现，安装之后再设置（方法一）：
+
+```
+sudo dpkg-reconfigure wireshark-common  //GUI出于安全方面的考虑，普通用户不能够打开网卡设备进行抓包，Wireshark不建议用户通过sudo在root权限下运行,该命令是使普通用户获取root权限。
+```
+
+然后
+
+```
+sudo gedit /etc/group
+
+wireshark:x:132:lee    ;lee对应当前登录的用户名,我用户名是lee
+
+```
+
+注销后重启，在终端输入`wireshark`进行启动。
+
+
+
+配置普通用户登录wireshark方法二：
+
+```
+sudo groupadd wireshark        		//添加wireshark用户组；
+sudo chgrp wireshark /usr/bin/dumpcap		//修改dumpcap所属组为wireshark；
+sudo chmod 4755 /usr/bin/dumpcap		//修改dumpcap的权限，让用户组拥有root权限；
+sudo gpasswd -a lee wireshark   	//将普通用户lee加入wireshark组；
+```
+
+
+
+****
+
+**命令行使用tshark：**
+
+如果想要使用命令行版本时，需要安装tshark
+
+```
+sudo apt-get install tshark
+```
+
+命令行抓取特定网卡和端口的包
+
+```
+tshark -i eth0 port 6060
+```
+
+
+
+**命令行使用tcpdump：**
+
+常用的参数：
+
+```
+tcpdump [-i 网卡] -nnAX '表达式'
+```
+
+各参数说明如下：
+
+- -i：interface 监听的网卡。
+- -nn：表示以ip和port的方式显示来源主机和目的主机，而不是用主机名和服务。
+- -A：以ascii的方式显示数据包，抓取web数据时很有用。
+- -X：数据包将会以16进制和ascii的方式显示。
+- 表达式：表达式有很多种，常见的有：host 主机；port 端口；src host 发包主机；dst host 收包主机。多个条件可以用and、or组合，取反可以使用!，更多的使用可以查看man 7 pcap-filter。
+
+```
+$sudo tcpdump -i eno1  		//监听eno1
+$tcpdump -i eno1 -nn "tcp" 			//监听指定协议的数据
+$tcpdump -i eno1 -nn 'host 192.168.1.231' 	//监听指定的主机,这样只有192.168.1.231这台主机发送的包才会被抓取。
+$tcpdump -i eno1 -nn 'src host 192.168.1.231' 		//这样只有192.168.1.231这台主机发送的包才会被抓取。
+
+$ tcpdump -i eno1 -nn 'dst host 192.168.1.231'		//这样只有192.168.1.231这台主机接收到的包才会被抓取。
+
+$ tcpdump -i eno1 -nnA 'port 443'  //监听指定端口,用来监听主机的80端口收到和发送的所有数据包。
+
+$ tcpdump -i eno1 -nnA 'port 80 and src host 192.168.1.231'  //监听指定主机和端口,多个条件可以用and，or连接。上例表示监听192.168.1.231主机通过80端口发送的数据包。
+
+$ tcpdump -i eno1 -nnA '!port 22		//监听除某个端口外的其它端口的数据包。
+
+```
+
