@@ -84,6 +84,8 @@ $ adb shell am start -n "com.example.lee.myapplication/com.example.lee.myapplica
 ```
 //输出所有已安装的应用
 adb shell pm list packages -f 
+//清除包
+adb shell pm clear 包名
 ```
 
 ### 6、使用命令对APK签名
@@ -181,3 +183,25 @@ zipalign -f -v 4 hi.apk hi_zip.apk
 hi.apk和 hi_zip.apk  分别指定整理前的APK和整理后生成的APK
 
 运行上面命令，将会在当前目录下生成一个hi_zip.apk文件，这就是签名完成且经过优化的APK安装包，该安装包可以对外发布了。
+
+### 7、查看手机内存信息
+
+```
+#查看手机内存信息，[]可选输入
+$ adb shell dumpsys meminfo [包名]
+$ adb shell top 
+#查看文件使用内存大小
+$ adb shell df -k /system
+$ adb shell du -sk /system/app
+
+#单个java虚拟机的最大内存限制
+$ adb shell getprop|grep dalvik.vm.heapsize
+[dalvik.vm.heapsize]: [256m]
+#单个应用的最大内存限制
+$ adb shell getprop|grep dalvik.vm.heapgrowthlimit
+[dalvik.vm.heapgrowthlimit]: [128m]
+#查看手机cpu使用信息
+$ adb shell dumpsys cpuinfo 
+
+```
+
