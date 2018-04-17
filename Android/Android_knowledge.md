@@ -137,7 +137,7 @@ appPkgName.setText(appmoreinfo.getPkgName());
 appLable.setText(appmoreinfo.getAppLable());
 ```
 
-2、Button控件的点击事件之三种实现方式：
+### 2、Button控件的点击事件之三种实现方式：
 
 method1:匿名内部类
 
@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 }
 ```
 
-### 2、反编译APK
+### 3、反编译APK
 
 Android的反编译分成两个部分：
 

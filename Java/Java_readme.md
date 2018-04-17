@@ -1,18 +1,22 @@
-一、arraylist中的add()方法是将对象添加到arraylist的结尾处：
+Java_readme
+
+### 一、arraylist中的add()方法是将对象添加到arraylist的结尾处：
 
 List list = new ArrayList();
 for (int i=0; i<100000; i++)
 list.add(i);//将十万个数字添加到 ArrayList 的结尾处;
- 
+
 set()方法是设置第X个元素为Ｘ：
 
 // 设置第2个元素为10
 list.set(1, "10");
 
-二、notifyDataSetChanged() 动态更新ListView 通过 Handler AsyncTask两种方式：
+### 二、notifyDataSetChanged() 动态更新ListView 通过 Handler AsyncTask两种方式：
+
 （https://www.pocketdigi.com/20100827/75.html）；
 
-三、
+### 三、字符串分隔
+
 String str;
 str＝str.substring(int beginIndex);截取掉str从首字母起长度为beginIndex的字符串，将剩余字符串赋值给str；
 
@@ -45,8 +49,9 @@ split()用法：
     }  
     System.out.println(x);   //输出的是: 处理结果: 5,6,7,8,|,X,Y,Z,  。
 
+### 四、charSequence
 
-三、charSequence是一个接口，表示char值的一个可读序列。此接口对许多不同种类的char序列提供统一的自读访问。
+charSequence是一个接口，表示char值的一个可读序列。此接口对许多不同种类的char序列提供统一的自读访问。
 此接口不修改该equals和hashCode方法的常规协定，因此，通常未定义比较实现 CharSequence 的两个对象的结果。
 他有几个实现类：CharBuffer、String、StringBuffer、StringBuilder。
 
@@ -67,4 +72,3 @@ split()用法：
     tv=(TextView)findViewById(R.id.styled_text);    //同上  
     tv.setText(cs);            //设置值  
 
- 
