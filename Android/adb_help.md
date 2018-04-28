@@ -205,3 +205,11 @@ $ adb shell dumpsys cpuinfo
 
 ```
 
+8、查看手机屏幕大小
+
+```
+$ adb shell wm size
+output: Physical size: 480x800
+
+```
+
