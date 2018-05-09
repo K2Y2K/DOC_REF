@@ -608,6 +608,18 @@ cat -b textfile1 textfile2 >> textfile3
 把[**test**](http://www.cnblogs.com/perfy/admin/).txt文件赋空值
 cat /dev/null > ~/Downloads/test.txt  
 
+
+
+```
+1、追加文件
+# cat << EOF >> test.sh  内容  EOF
+---将内容追加到 test.sh 的后面，不会覆盖掉原有的内容
+2、换一种写法
+# cat > test.sh << EOF 内容  EOF（会覆盖掉原有的内容）
+```
+
+
+
 ## 十、vi/vim命令
 
 键盘图：
@@ -1063,5 +1075,20 @@ lee@lee:~/Downloads$ rm - file
 -h filename 如果文件是软链接，则为真
 
 if (!-e "../script/clone.sh")  #clone.sh不存在时为true。
+
+```
+
+十五、echo命令
+
+```
+
+window的bat脚本
+用@echo off 就能关闭echo命令的输入显示
+rem和::都起到注释的作用 
+
+linux的shell脚本
+stty -echo ：关闭回显
+stty echo  ：开启回显
+
 ```
 
