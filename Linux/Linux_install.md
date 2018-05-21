@@ -493,7 +493,7 @@ $ sysv-rc-conf
 
 ```
 
-十二、Install Typora in Ubuntu
+## **十二、Install Typora in Ubuntu**
 
 ```
 1. Add Typora Linux repository via command:
@@ -508,5 +508,17 @@ $ sudo apt install typora
 
 4.And the Typora markdown editor can be removed via command:
 $ sudo apt remove typora && sudo apt autoremove
+```
+
+## 十三、Install TeamViewer in ubuntu
+
+```
+1. 首先到https://www.teamviewer.com/zhcn/download/linux/下载相应linux版本的Teamviewer，即软件安装包teamviewer_13.1.3026_amd64.deb。
+
+2. 安装依赖包，执行命令：(64位系统忽视如下命令，若是32位的系统则需要执行如下命令)
+$ sudo apt-get install libjpeg62:i386 libxinerama1:i386 libxrandr2:i386 libxtst6:i386 ca-certificates
+
+3. 安装deb软件包，执行命令：
+sudo dpkg -i teamviewer_13.1.3026_amd64.deb
 ```
 
