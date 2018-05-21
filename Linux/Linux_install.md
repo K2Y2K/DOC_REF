@@ -121,27 +121,27 @@ sudo apt-get install everpad
  方法2)、ubuntu最简化安装使用gnome桌面             
 
            1、gnome桌面窗口管理程序
-
+    
              $sudo apt-get  install gnome-shell  
-
+    
            2、安装gnome面板
-
+    
            $sudo apt-get  install  gnome-panel  
-
+    
            3、安装gnome菜单
-
+    
            $sudo apt-get  install   gnome-menus
-
+    
            4、安装gnome-session
-
+    
             $sudo apt-get  install  gnome-session
-
+    
            5、安装gdm会话切换器
-
+    
              $sudo apt-get  install  gdm
-
+    
            6、注销并选择gnome登陆
-
+    
           {方法三 只安装gnome桌面环境（不全）：
           $ sudo apt-get install gnome-session-flashback
           }
@@ -281,9 +281,9 @@ FCCC7561 8A4A1741 68FA4223 ADCEDE07
 {*如果是默认配置的情况下，当有新的版本出现的时候总是会有更新提示，为了取消更新提示，需进行如下操作：
 
     菜单Sublime Text → Preferences → Settings（点击），则会打开Preferences.sublime-settings — User文件。
-
+    
     将下面的代码复制并粘贴到该文件的最外层中括号里。需要注意的是：取消更新提示的前提是你已经完成了Sublime Text的激活（ 
-
+    
     "update_check":false
 }
 【安装Package Control插件：https://packagecontrol.io，其他请参考：http://blog.csdn.net/stilling2006/article/details/54376743；】
@@ -491,5 +491,22 @@ $ apt-get install -y sysv-rc-conf
 $ sysv-rc-conf 
 配置 smbd   samba   nmbd 服务 等级 1到5
 
+```
+
+十二、Install Typora in Ubuntu
+
+```
+1. Add Typora Linux repository via command:
+$ sudo add-apt-repository 'deb https://typora.io linux/'
+
+2. Setup the key:
+$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
+
+3. Finally update and install this simple markdown editor:
+$ sudo apt update
+$ sudo apt install typora
+
+4.And the Typora markdown editor can be removed via command:
+$ sudo apt remove typora && sudo apt autoremove
 ```
 
