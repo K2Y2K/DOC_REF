@@ -273,6 +273,12 @@ git远程库的其他下载方式：https，zip压缩包，但还是属ssh方式
 
 注：如果推送失败，可能本地代码不是最新的，可以先用`git pull`命令先把远程的代码拉到本地，如果有冲突处理一下冲突，然后再推送。不过`git pull`命令也有可能失败，这是因为没有建立本地分支和远程分支的关联，还需要先用这个命令建立关联：`git branch --set-upstream <local-branch-name> origin/<remote-branch-name>`
 
+```
+git branch --set-upstream-to=origin/<branch>
+```
+
+
+
 ## 多人协作推荐的分支策略
 
 - master分支放用于发布的代码，平时不要在master分支上进行日常开发。
