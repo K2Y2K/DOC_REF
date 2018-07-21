@@ -1061,7 +1061,7 @@ lee@lee:~/Downloads$ rm - file
 --help：在线帮助；
 --version：显示版本信息。
 ```
-十五、shell命令
+## 十五、shell命令
 
 ```
 -e filename 如果 filename存在，则为真
@@ -1078,10 +1078,9 @@ if (!-e "../script/clone.sh")  #clone.sh不存在时为true。
 
 ```
 
-十五、echo命令
+## 十六、echo命令
 
 ```
-
 window的bat脚本
 用@echo off 就能关闭echo命令的输入显示
 rem和::都起到注释的作用 
@@ -1090,5 +1089,63 @@ linux的shell脚本
 stty -echo ：关闭回显
 stty echo  ：开启回显
 
+
+
+```
+
+## 十七、磁盘管理
+
+MBR（Master Boot Record）和GPT（GUID Partition Table）是在磁盘上存储分区信息的两种不同方式。
+
+```
+$ sudo fdisk -l  #查看分区
+$ sudo fdisk /dev/sda #对剩余空间进行分配
+ DOS (MBR)
+   a   toggle a bootable flag
+   b   edit nested BSD disklabel
+   c   toggle the dos compatibility flag
+
+  Generic
+   d   delete a partition
+   F   list free unpartitioned space
+   l   list known partition types
+   n   add a new partition
+   p   print the partition table
+   t   change a partition type
+   v   verify the partition table
+   i   print information about a partition
+
+  Misc
+   m   print this menu
+   u   change display/entry units
+   x   extra functionality (experts only)
+
+  Script
+   I   load disk layout from sfdisk script file
+   O   dump disk layout to sfdisk script file
+
+  Save & Exit
+   w   write table to disk and exit
+   q   quit without saving changes
+
+  Create a new label
+   g   create a new empty GPT partition table
+   G   create a new empty SGI (IRIX) partition table
+   o   create a new empty DOS partition table
+   s   create a new empty Sun partition table
+
+$ sudo partprobe or $ sudo kpartx  -a  /dev/sda3 #重载分区表
+$ sudo parted or $ sudo parted /dev/sda3  #查看分区表
+(parted)print  ------------->打印
+(parted)quit  -------------->退出
+$ sudo mkfs.ext4  /dev/sda3 #格式化分区
+or $ sudo mkfs -t ext4 /dev/sda3
+(根据需要格式化文件系统，可以是mkfs.vfat、mkfs.ext3等等)
+$ sudo blkid #查看UUID，找出/dev/sda3对应的UUID
+$ sudo vim /etc/fstab #修改/etc/fstab文件(永久挂载)
+# /dev/sda3 /mnt/lee ext4 defaults 0 0 
+（设备名 挂载点 文件系统 defaults 0 0 ）
+$ mount /dev/sda3 /mnt/lee #零时挂载，重启之后会消失
+（mount  设备  挂载点,挂载点必须为已存在的目录）
 ```
 
