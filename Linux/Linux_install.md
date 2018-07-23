@@ -522,3 +522,29 @@ $ sudo apt-get install libjpeg62:i386 libxinerama1:i386 libxrandr2:i386 libxtst6
 sudo dpkg -i teamviewer_13.1.3026_amd64.deb
 ```
 
+## 十四、Install  Virtualbox in ubuntu 16.04
+
+```
+Step 1 – Prerequsities
+$ sudo apt-get update
+$ sudo apt-get upgrade
+
+Step 2 – Configure Apt Repository
+$ sudo gedit /etc/apt/sources.list
+#将下面的软件源地址加入sources.list的末尾
+deb http://download.virtualbox.org/virtualbox/debian xenial contrib
+or
+$ sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian `lsb_release -cs` contrib"
+
+Step 3 – Import VirtualBox Package Sign Key
+$ wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+$ wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+
+Step 4 – Install Oracle VirtualBox
+$ sudo apt-get update
+$ sudo apt-get install virtualbox-5.2
+
+Step 5 – Launch VirtualBox
+$ virtualbox
+```
+
