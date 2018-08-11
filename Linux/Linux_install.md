@@ -548,3 +548,71 @@ Step 5 – Launch VirtualBox
 $ virtualbox
 ```
 
+## 十五、Install Python in ubuntu and update alternatives version for python
+
+```
+
+Ubuntu 16.04 comes with both Python 2.7 and Python 3.5 by default.
+
+1.查看Ubuntu系统已安装的python版本及当前使用的python版本
+$ ls /usr/bin/python*python--version
+
+2. install Python 3.6 along with them via a third-party PPA by doing following steps:
+step 1:
+$ sudo add-apt-repository ppa:jonathonf/python-3.6
+step 2:
+$ sudo apt-get update
+$ sudo apt-get install python3.6
+
+3.设置update-alternatives  切换python版本
+显示Python代替版本信息：
+$ update-alternatives --list python 
+执行后error显示：
+update-alternatives: error: no alternatives for python 表示Python代替版本尚未安装
+
+解决error执行以下命令安装：
+update-alternatives: --install needs <link> <name> <path> <priority>
+$ update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+print：update-alternatives: using /usr/bin/python2.7 to provide /usr/bin/python (python) in auto mode
+$ update-alternatives --install /usr/bin/python python /usr/bin/python3.5 2
+print：update-alternatives: using /usr/bin/python3.5 to provide /usr/bin/python (python) in auto mode
+(or
+$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1
+$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
+)
+查看默认版本：
+$ python --version
+注：上述命令中设置 /usr/bin/python3.5 设置的优先级为2，则3.5为默认版本。
+
+切换版本update-alternatives --config python
+$ sudo update-alternatives --config python 
+(or 
+$ sudo update-alternatives --config python3
+$ python3 -V)
+4.python3版本安装pip
+$ sudo apt-get install python3-pip
+安装完以后运行pip3 -V显示版本
+升级pip版本:
+$ pip3 install --upgrade pip
+```
+
+**bug:**
+
+```
+1、升级pip版本出现以下错误(这是pip 10.0.0版本的BUG)：
+Traceback (most recent call last): 
+File “/usr/bin/pip3”, line 9, in 
+from pip import main
+解决办法:修改 /usr/bin/pip 文件
+from pip import main
+if __name__ == '__main__':
+    sys.exit(main())
+改为：
+from pip import __main__
+if __name__ == '__main__':
+    sys.exit(__main__._main())
+2、 recreate the symlink:
+$ sudo rm /usr/bin/python3
+$ sudo ln -s python3.5 /usr/bin/python3
+```
+
