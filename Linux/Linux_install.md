@@ -594,6 +594,9 @@ $ sudo apt-get install python3-pip
 安装完以后运行pip3 -V显示版本
 升级pip版本:
 $ pip3 install --upgrade pip
+(or
+$ python -m pip install --upgrade pip
+)
 ```
 
 **bug:**
