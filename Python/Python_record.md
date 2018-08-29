@@ -158,7 +158,9 @@ Or
 File "/home/lee/test/python/test_spider/html_parser.py", line 4, in <module>
     import urlparse
 ImportError: No module named 'urlparse'
-
+eg:
+import urlparse
+new_full_url=urlparse.urljoin(page_url,new_url)
 ```
 
 **Description:**
@@ -171,6 +173,11 @@ urlparse模块在Python 3中重命名为urllib.parse,
 
 ```
 from urllib import parse as urlparse
+new_full_url=urlparse.urljoin(page_url,new_url)
 or
 import urllib.parse  #urllib.parse 替代urlparse
+new_full_url=urllib.parse.urljoin(page_url,new_url)
+or
+from urllib.parse import urljoin
+new_full_url = urljoin(page_url, new_url)
 ```
