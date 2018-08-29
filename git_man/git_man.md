@@ -179,3 +179,34 @@ git merge --no-ff master //假设当前分支为dev,将master 里的p1 合入dev
 git push origin :dev-only  //删除远程分支
 ```
 
+## 2、**Quick setup**-create a new repository on local 
+
+through https
+
+```
+git clone https://github.com/K2Y2K/Python_Project.git
+```
+
+or through ssh
+
+```
+git clone git@github.com:K2Y2K/Python_Project.git
+```
+
+…or create a new repository on the command line
+
+```
+echo "# Python_Project" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/K2Y2K/Python_Project.git
+git push -u origin master
+```
+
+…or push an existing repository from the command line
+
+```
+git remote add origin https://github.com/K2Y2K/Python_Project.git
+git push -u origin master
+```
