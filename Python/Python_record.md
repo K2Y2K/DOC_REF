@@ -149,3 +149,28 @@ Or
 ```
 
 若执行`./bs.py`需要在文件头加入`#!/usr/bin/python`。
+
+### 5、python3错误：no module named urlparse
+
+**Problem :**
+
+```
+File "/home/lee/test/python/test_spider/html_parser.py", line 4, in <module>
+    import urlparse
+ImportError: No module named 'urlparse'
+
+```
+
+**Description:**
+
+urlparse模块在Python 3中重命名为urllib.parse,
+
+**Solution:**
+
+代码转换成：
+
+```
+from urllib import parse as urlparse
+or
+import urllib.parse  #urllib.parse 替代urlparse
+```
