@@ -548,6 +548,46 @@ Step 5 – Launch VirtualBox
 $ virtualbox
 ```
 
+修改vbox虚拟磁盘空间
+
+```
+#####查看虚拟磁盘空间信息，确认需要扩容的虚拟硬盘
+ldx@ldx:~$ VBoxManage showmediuminfo "/mnt/ldx/software/virtualbox/vms/win777/win777.vdi" 
+UUID:           8235534f-78a1-4774-a8f5-0d5a91e4da6c
+Parent UUID:    base
+State:          locked write
+Type:           normal (base)
+Location:       /mnt/ldx/software/virtualbox/vms/win777/win777.vdi
+Storage format: VDI
+Format variant: dynamic default
+Capacity:       32768 MBytes
+Size on disk:   2 MBytes
+Encryption:     disabled
+In use by VMs:  win777 (UUID: f4b63c38-9810-4f31-978f-3d96189d1c7f)
+
+#####计算出要扩容的空间大小，这里是要扩展到50G(1024*1024*1024*50)。
+ldx@ldx:~$ set /a 1024*50
+
+#####扩展虚拟硬盘空间，必须是动态分配模式的硬盘不能是固定大小模式的，最后的数字替换成上面计算出的50G.(--resize 51200 单位是Ｍ)
+ldx@ldx:~$ vboxmanage modifymedium --resize 51200 "/mnt/ldx/software/virtualbox/vms/win777/win777.vdi"
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+ldx@ldx:~$ VBoxManage showmediuminfo "/mnt/ldx/software/virtualbox/vms/win777/win777.vdi" 
+UUID:           8235534f-78a1-4774-a8f5-0d5a91e4da6c
+Parent UUID:    base
+State:          created
+Type:           normal (base)
+Location:       /mnt/ldx/software/virtualbox/vms/win777/win777.vdi
+Storage format: VDI
+Format variant: dynamic default
+Capacity:       51200 MBytes
+Size on disk:   2 MBytes
+Encryption:     disabled
+In use by VMs:  win777 (UUID: f4b63c38-9810-4f31-978f-3d96189d1c7f)
+ldx@ldx:~$ 
+```
+
+
+
 ## 十五、Install Python in ubuntu and update alternatives version for python
 
 ```
