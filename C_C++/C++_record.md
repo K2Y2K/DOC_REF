@@ -35,3 +35,97 @@ L.data=(ElemType*)malloc(sizeof(ElemType)*InitSize);
 L.data=new ElemType[InitSize];
 ```
 
+## 二、problem for running
+
+**Problem :**
+
+**Description:**
+
+**Solution:**
+
+### 1、not declared in this scope
+
+#### 1)、error: 'system' was not declared in this scope
+
+**Problem :**
+
+```
+error: ‘system’ was not declared in this scope
+  system("pause");
+```
+
+**Description:**
+
+**Solution:**
+
+```
+#include <cstdlib>
+```
+
+#### 2)、error: ‘sort’ was not declared in this scope
+
+**Problem :**
+
+```
+error: ‘sort’ was not declared in this scope
+  sort(array.begin(), array.end(),greater<int>());
+```
+
+**Description:**
+
+**Solution:**
+
+```
+#include<algorithm>
+```
+
+#### 3)、error: ‘printf’ was not declared in this scope
+
+**Problem :**
+
+```
+error: ‘printf’ was not declared in this scope
+  printf("%d\n",res);
+```
+
+**Description:**
+
+**Solution:**
+
+```
+#include<stdio.h>
+```
+
+
+
+## 三、Applets
+
+1、按任意键退出
+
+```
+system(“pause”);
+#or
+if(getchar())
+    exit(0);
+```
+
+2、在一行输入任意个数
+
+```
+whie(1)
+{
+if(getchar()=='\n')break;
+}
+#or
+for(i=0;;i++)
+{
+    scanf("%d",num+i);
+    if(getchar()=='\n')break;
+}
+#or
+ while (cin.get() != '\n') {
+     cin >> i;
+     inputs.push_back(i);
+ }
+```
+
