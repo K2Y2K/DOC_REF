@@ -21,7 +21,7 @@ Linux系统的启动过程可以分为5个阶段：
 
 init 进程是系统所有进程的起点，没有这个进程，系统中任何进程都不会启动。init 程序首先是需要读取配置文件 /etc/inittab。
 
-​               **运行级别**
+**运行级别**
 
 许多程序需要开机启动。它们在Windows叫做"服务"（service），在Linux就叫做"守护进程"（daemon）。
 
@@ -123,7 +123,7 @@ Linux预设提供了六个命令窗口终端机让我们来登录。
 
 ![bg2013081707](https://img.w3cschool.cn/attachments/uploads/2014/06/bg2013081707.png)
 
-​        **关机命令**
+**关机命令**
 
 正确的关机流程为：sysnc > shutdown > reboot > halt
 
@@ -211,7 +211,7 @@ unrar e file.rar //只会把压缩包里的文件解压出来，文件包没有�
 【其他文件】
 【解压】
 
-​        tar zxvf xxx.tar.gz -C /usr/xxx　　　// 解压xxx.tar.gz到/usr/xxx 路径下
+       tar zxvf xxx.tar.gz -C /usr/xxx　　　// 解压xxx.tar.gz到/usr/xxx 路径下
 
 　　tar –xvf file.tar //解压 tar包
 
@@ -631,6 +631,33 @@ cat /dev/null > ~/Downloads/test.txt
 
 
 ![img](https://www.w3cschool.cn/attachments/uploads/2014/07/vim_model.png)
+
+
+
+### 1、vim设置tab键为4个空格
+
+```
+#往/etc/vim/vimrc文件结尾加入
+set tabstop=4
+#即将linux系统下vim软件中的tab键更改为4个空格。
+set nu
+or
+set number
+#显示行号
+set nonumber
+or
+set nonu
+#隐藏行号
+set autoindent
+#编辑代码时，把当前行的对齐格式应用到下一行
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+inoremap < <><ESC>i
+inoremap " ""<ESC>i
+inoremap ' ''<ESC>i
+#括号自动补全
+```
 
 
 
