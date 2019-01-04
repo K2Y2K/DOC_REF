@@ -28,3 +28,50 @@ http://ftp.tsukuba.wide.ad.jp/Linux/ubuntu-releases/ #ubuntu 镜像地址
 1、https://www.ipip.net     #ip
 ```
 
+## 4、3GPP
+
+```
+１、3gpp
+http://www.3gpp.org/
+http://www.3gpp.org/ftp/Specs/archive/
+https://www.gsma.com/newsroom/all-documents/ts-11-device-field-and-lab-test-guidelines/  #GSMA
+http://3gppdecoder.free.fr/?q=node/1  #3GPP decoder tool 
+https://www.wireshark.org/    #wireshark tool
+
+http://www.3gpp-message-analyser.com/   #3GPP  online decoder
+
+２、wifi
+https://www.wi-fi.org/ #需要账号
+https://www.wi-fi.org/members/certification-programs
+https://www.krackattacks.com/  
+https://www.kb.cert.org/vuls/byvendor?searchview&Query=FIELD+Reference=228519&SearchOrder=4
+
+https://www.gsma.com/newsroom/all-documents/ts-11-device-field-and-lab-test-guidelines/
+
+http://www.ietf.org/rfc/ ###协议RFC
+https://iperf.fr/iperf-download.php #iperf_tool测试WiFi HT
+
+３、BQB
+https://www.bluetooth.org  #需要账号
+
+```
+
+## 5、学习外网
+
+```
+１、
+http://archive.ubuntu.com/ubuntu/ #ubuntu tool resources link
+eg (for hotspad tool):http://archive.ubuntu.com/ubuntu/pool/universe/w/wpa/hostapd_2.6-16ubuntu1_amd64.deb
+
+２、
+https://sourceforge.net/  #新浪资源网
+３、
+http://androidxref.com/　　＃android source code
+４、
+https://www.bmob.cn/　＃Bmob后端云服务
+5、
+https://docs.docker.com/engine/docker-overview/  #docker
+6、
+http://androidxref.com/   #Android code
+```
+
