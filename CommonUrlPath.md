@@ -75,3 +75,9 @@ https://docs.docker.com/engine/docker-overview/  #docker
 http://androidxref.com/   #Android code
 ```
 
+## 6、服务网
+
+```
+1、http://www.ruokuai.com/  #图像识别云服务
+```
+
