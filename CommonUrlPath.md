@@ -38,7 +38,21 @@ https://www.gsma.com/newsroom/all-documents/ts-11-device-field-and-lab-test-guid
 http://3gppdecoder.free.fr/?q=node/1  #3GPP decoder tool 
 https://www.wireshark.org/    #wireshark tool
 
+#3GPP  online decoder
 http://www.3gpp-message-analyser.com/   #3GPP  online decoder
+
+#globalcertificationforum
+https://www.globalcertificationforum.org/documents.html
+
+#OMA
+https://www.omaspecworks.org/
+http://openmobilealliance.org/wp/index.html
+
+#ETSI
+https://www.etsi.org/
+
+#globalplatform
+https://globalplatform.org/
 
 ２、wifi
 https://www.wi-fi.org/ #需要账号
